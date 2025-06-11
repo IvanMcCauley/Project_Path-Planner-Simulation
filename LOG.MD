@@ -10,6 +10,6 @@
   - Dynamic cell sizing using `CELL_SIZE`
   - 60 FPS main loop for smooth visuals
   - Clean structure: config, init, draw, main loop
-
+![image]("C:\Users\Ivan\Downloads\Screenshot 2025-06-11 234719.png")
 
 - Project now displays a static, well-aligned grid as a simulation base
