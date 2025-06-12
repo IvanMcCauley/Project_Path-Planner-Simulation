@@ -43,7 +43,7 @@
 ### 🔜 Next Steps (Step 3 Preview)
 
 - Implement A* pathfinding algorithm from scratch (no libraries)
-- Press **spacebar** to trigger the path search from start to goal
+- Press spacebar to trigger the path search from start to goal
 - Visualize the algorithm in real time:
   - Blue = frontier (open set)
   - Red = visited (closed set)
