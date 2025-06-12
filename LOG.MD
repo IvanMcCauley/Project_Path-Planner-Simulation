@@ -1,4 +1,4 @@
-## 🗓️ Day 1 (11/June/2025) – Project Kickoff
+## 🗓️ Step 1 (11/June/2025) – Project Kickoff
 
 - Created folder `path_planner_sim` and opened it in VS Code
 - I had Python already installed from other projects, but I installed Pygame (`pip install pygame`)
@@ -16,7 +16,7 @@
 - Project now displays a static, well-aligned grid as a simulation base
 
 
-## 🗓️ Day 2 (12/June/2025) – Interactive Grid (Start, Goal, Obstacles)
+## 🗓️ Step 2 (12/June/2025) – Interactive Grid (Start, Goal, Obstacles)
 
 - Added `Node` class to represent each cell in the grid
   - Each node tracks whether it's a start, goal, barrier, or empty
@@ -49,5 +49,8 @@
   - Red = visited (closed set)
   - Purple or yellow = final path
 - Ensure performance is smooth and visuals update frame-by-frame
+
+
+
 
 
