@@ -34,6 +34,20 @@
 <img src="https://github.com/user-attachments/assets/173bdea8-ebc4-4dba-84e1-d4a0d8a415e9" width="400">
 
 - Window now supports smooth 60 FPS redraw and responds instantly to mouse input
+### 🐞 Minor Issue
 
+- Noticed occasional lag or double-clicking needed when placing/removing nodes
+  - Likely due to how fast mouse events are checked in the loop
+  - Resolved by simplifying click logic and ensuring state updates every frame
+
+### 🔜 Next Steps (Step 3 Preview)
+
+- Implement A* pathfinding algorithm from scratch (no libraries)
+- Press **spacebar** to trigger the path search from start to goal
+- Visualize the algorithm in real time:
+  - Blue = frontier (open set)
+  - Red = visited (closed set)
+  - Purple or yellow = final path
+- Ensure performance is smooth and visuals update frame-by-frame
 
 
