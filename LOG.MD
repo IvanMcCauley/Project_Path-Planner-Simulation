@@ -14,3 +14,25 @@
 
 
 - Project now displays a static, well-aligned grid as a simulation base
+
+
+## 🗓️ Day 2 (12/June/2025) – Interactive Grid (Start, Goal, Obstacles)
+
+- Added `Node` class to represent each cell in the grid
+  - Each node tracks whether it's a start, goal, barrier, or empty
+  - Nodes can change color to reflect their current state
+
+- Replaced previous static grid logic with a dynamic object-based system
+- Created a 2D grid of `Node` objects using `make_grid()`
+
+- Implemented real-time interaction:
+  - Left-click to place: start (green), goal (red), then barriers (black)
+  - Right-click to reset any cell (back to white)
+
+- Updated `draw()` function to render both grid lines and node states
+- Added `get_clicked_pos()` to convert mouse pixel coordinates to grid positions
+
+- Window now supports smooth 60 FPS redraw and responds instantly to mouse input
+
+
+
