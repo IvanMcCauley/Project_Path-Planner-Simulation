@@ -31,6 +31,7 @@
 
 - Updated `draw()` function to render both grid lines and node states
 - Added `get_clicked_pos()` to convert mouse pixel coordinates to grid positions
+<img src="https://github.com/user-attachments/assets/173bdea8-ebc4-4dba-84e1-d4a0d8a415e9" width="400">
 
 - Window now supports smooth 60 FPS redraw and responds instantly to mouse input
 
