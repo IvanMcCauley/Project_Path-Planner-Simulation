@@ -9,6 +9,7 @@
   - 60 FPS event loop for smooth visual updates
 - Result: project displays a clean, static grid and runs smoothly at 60 FPS
 
+---
 
 ## Step 2 – Interactive Grid (Start, Goal, Obstacles)
 
@@ -38,6 +39,8 @@
   - Purple or yellow = final path
 - Ensure performance is smooth and visuals update frame-by-frame
 
+---
+
 ## Step 3 – A* Pathfinding Algorithm (Visualized)
 
 - Implemented A* algorithm from scratch with real-time search visualization
@@ -56,7 +59,6 @@
   - Cause: `a_star()` function was defined after it was called in the loop
   - Fix: moved the function definitions (`a_star()`, `h()`, `reconstruct_path()`) above the main loop
 
----
 
 ## Next Steps
 
