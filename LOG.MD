@@ -38,6 +38,35 @@
   - Purple or yellow = final path
 - Ensure performance is smooth and visuals update frame-by-frame
 
+## Step 3 – A* Pathfinding Algorithm (Visualized)
+
+- Implemented A* algorithm from scratch with real-time search visualization
+  - Used `heapq` to maintain a priority queue (lowest-cost nodes first)
+  - Heuristic: Manhattan distance between nodes
+- Color-coded visual feedback during search:
+  - 🔵 Blue = nodes in the frontier (open set)
+  - 🔴 Red = nodes already explored (closed set)
+  - 🟡 Yellow = final path from goal to start
+- Added `update_neighbors()` method to each node to identify accessible neighbors
+- Made `Node` class hashable by implementing `__hash__` and `__eq__` for use in sets/dicts
+- Triggered search using **spacebar** once start and goal are placed
+
+### Bug Fix
+- Issue: pressing spacebar crashed program with `NameError: name 'a_star' is not defined`
+  - Cause: `a_star()` function was defined after it was called in the loop
+  - Fix: moved the function definitions (`a_star()`, `h()`, `reconstruct_path()`) above the main loop
+
+---
+
+## Next Steps
+
+- Add keybind to reset the board (e.g. `R` key)
+- Move A* logic to a separate `astar.py` file for modularity
+- Improve visual polish: smoother path trail, animation speed tuning
+
+
+
+
 
 
 
