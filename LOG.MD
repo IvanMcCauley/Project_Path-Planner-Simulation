@@ -60,11 +60,51 @@
   - Fix: moved the function definitions (`a_star()`, `h()`, `reconstruct_path()`) above the main loop
 
 
-## Next Steps
+---
 
-- Add keybind to reset the board (e.g. `R` key)
-- Move A* logic to a separate `astar.py` file for modularity
-- Improve visual polish: smoother path trail, animation speed tuning
+## Step 4 – LIDAR-Style Limited Perception & Dynamic Replanning
+
+- Introduced **LIDAR-style sensor radius** to simulate local vehicle perception:
+  - Set `LIDAR_RADIUS = 6` (in grid cells) to mimic AV-style range limits
+  - Updated `Node.update_neighbors()` to only include neighbors **within sensor radius**
+- Modified A* to run **within the vehicle's visible region** only:
+  - Passed the `sensor_radius` and a `moving=True` flag to constrain planning space
+  - Goal must be visible to initiate planning
+- Implemented **dynamic replanning loop**:
+  - On spacebar press, the vehicle plans a path to goal (if visible)
+  - Moves **one cell at a time**
+  - Re-runs A* at every step using updated local visibility
+- Updated visuals:
+  - Grey circle indicates LIDAR scan zone
+  - Replans path visually as new areas become visible
+
+### Observed Behavior 
+- Vehicle correctly plans and moves when **goal is visible**
+- If the goal is initially hidden (e.g. behind a wall), vehicle reports:
+'''
+Blocked or goal not visible.
+Stopped before goal.
+'''
+- If goal is reachable within the scan radius, vehicle follows the path until arrival
+
+### Debug Tools Added
+
+- Logged current vehicle position and visible neighbors each step
+- Logged each node checked during A* for fine-grain visibility into the search process
+
+### 🔜 Next Steps (Step 5 Preview)
+
+- Implement **goal-seeking exploration**:
+- Allow vehicle to **search unexplored regions** even when the goal is outside current view
+- Move toward open edges of the LIDAR zone in the direction of the goal
+- Add cost-aware exploration heuristics and memory of visited areas
+- Possibly Improve visuals with:
+- HUD display (path length, steps taken, planning time)
+- Optional heatmap overlays for cost-to-go visualization
+
+
+
+
 
 
 
