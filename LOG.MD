@@ -123,7 +123,7 @@ Stopped before goal.
 
 - Visualization enhancements:
   - **Explored areas** rendered in light blue (`(180, 220, 255)`)
-  - **Frontier nodes** highlighted in purple, overlaid on the map
+  - Added vehicle and flag icons to represent an automous vehicle and the end goal
   - LIDAR radius visualization now persists frame-to-frame
 
 ### Observed Behavior
@@ -131,18 +131,33 @@ Stopped before goal.
 - Gracefully handles walls, dead ends, and complex mazes via backtracking
 - Fully autonomous navigation: just set start + goal, press space, and observe
 
-### Fixes / Cleanup
-- Fixed `Node` comparison bug (added `__lt__` to prevent `heapq` errors)
-- Removed redundant methods and dead logic from `main.py`
-- Refactored A* call sites for clarity and reliability
+### 🧠 Problems Encountered & Debugging Journey
+
+- This step took **days of trial and error**:
+  - Initially, the agent would freeze if the goal wasn’t visible — no exploration logic existed
+  - Naïve attempts to flood outward caused crashes or infinite loops
+  - Major obstacle: **agent failing to find frontiers or backtrack intelligently**
+    - Solved by combining visible node scanning + persistent memory + nearest-node heuristics
+
+- Faced **heapq comparison bugs** when pushing custom `Node` objects:
+  - Fixed by adding a dummy `__lt__` method to `Node` to avoid `TypeError`
+
+- Visual clutter made debugging harder:
+  - Rebuilt color priority logic so purple (frontier) and light blue (explored) don't overwrite each other incorrectly
+
+- Several logic loops required manual tracing:
+  - Added dozens of debug `print()` statements for current position, visible nodes, frontier candidates, etc.
+  - Only through persistent inspection was the full autonomous loop achieved
 
 ---
 
-### ✅ Project Now Supports:
-- LIDAR-style limited perception
-- Persistent world memory
-- Dynamic frontier-based goal discovery
-- Robust autonomous replanning behavior
+### ✔ Features Achieved in This Step
+
+- **Fully autonomous goal-seeking**: vehicle can reach goals it can't initially see
+- **Persistent environment awareness** with `explored_set`
+- **Frontier exploration** logic with backtracking and recovery
+- **Dynamic replanning** using A* on each move
+- **LIDAR perception preserved** frame-to-frame
 
 ### 🔜 Step 6 Preview:
 - HUD overlay: show stats like steps taken, path length, planning time
