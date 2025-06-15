@@ -130,7 +130,6 @@ Stopped before goal.
   - Added dozens of debug `print()` statements for current position, visible nodes, frontier candidates, etc.
   - Only through persistent inspection was the full autonomous loop achieved
 
----
 
 ### Features Achieved in This Step
 - **Fully autonomous goal-seeking**: vehicle can reach goals it can't initially see
