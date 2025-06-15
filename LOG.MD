@@ -88,29 +88,16 @@ Stopped before goal.
 - If goal is reachable within the scan radius, vehicle follows the path until arrival
 
 ### Debug Tools Added
-
 - Logged current vehicle position and visible neighbors each step
 - Logged each node checked during A* for fine-grain visibility into the search process
-
-### 🔜 Next Steps (Step 5 Preview)
-
-- Implement **goal-seeking exploration**:
-- Allow vehicle to **search unexplored regions** even when the goal is outside current view
-- Move toward open edges of the LIDAR zone in the direction of the goal
-- Add cost-aware exploration heuristics and memory of visited areas
-- Possibly Improve visuals with:
-- HUD display (path length, steps taken, planning time)
-- Optional heatmap overlays for cost-to-go visualization
 
 ---
 
 ## Step 5 – Frontier-Based Goal Discovery & Persistent Exploration
-
 - Implemented **autonomous frontier exploration** to handle scenarios where the goal is not initially visible:
   - Vehicle scans its LIDAR radius for unexplored, non-barrier nodes (the "frontier")
   - If a frontier is found, it plans a path to the nearest one and continues expanding outward
   - If no frontier is visible, it **backtracks** to a previously visited node with unexplored neighbors
-
 - Added a **persistent `explored_set`** to simulate memory:
   - Tracks all visible nodes over time
   - Prevents revisiting fully explored areas
@@ -126,33 +113,26 @@ Stopped before goal.
   - Added vehicle and flag icons to represent an automous vehicle and the end goal
   - LIDAR radius visualization now persists frame-to-frame
 
+
 ### Observed Behavior
 - Vehicle successfully reaches the goal even when it starts fully hidden
 - Gracefully handles walls, dead ends, and complex mazes via backtracking
 - Fully autonomous navigation: just set start + goal, press space, and observe
 
-### 🧠 Problems Encountered & Debugging Journey
 
+### Problems Encountered & Debugging Journey
 - This step took **days of trial and error**:
   - Initially, the agent would freeze if the goal wasn’t visible — no exploration logic existed
-  - Naïve attempts to flood outward caused crashes or infinite loops
-  - Major obstacle: **agent failing to find frontiers or backtrack intelligently**
+  - Attempts to flood outward caused crashes or infinite loops
+  - Major obstacle: **vehicle failing to find frontiers or backtrack intelligently**
     - Solved by combining visible node scanning + persistent memory + nearest-node heuristics
-
-- Faced **heapq comparison bugs** when pushing custom `Node` objects:
-  - Fixed by adding a dummy `__lt__` method to `Node` to avoid `TypeError`
-
-- Visual clutter made debugging harder:
-  - Rebuilt color priority logic so purple (frontier) and light blue (explored) don't overwrite each other incorrectly
-
 - Several logic loops required manual tracing:
   - Added dozens of debug `print()` statements for current position, visible nodes, frontier candidates, etc.
   - Only through persistent inspection was the full autonomous loop achieved
 
 ---
 
-### ✔ Features Achieved in This Step
-
+### Features Achieved in This Step
 - **Fully autonomous goal-seeking**: vehicle can reach goals it can't initially see
 - **Persistent environment awareness** with `explored_set`
 - **Frontier exploration** logic with backtracking and recovery
