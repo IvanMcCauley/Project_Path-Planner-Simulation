@@ -102,14 +102,54 @@ Stopped before goal.
 - HUD display (path length, steps taken, planning time)
 - Optional heatmap overlays for cost-to-go visualization
 
+---
 
+## Step 5 – Frontier-Based Goal Discovery & Persistent Exploration
 
+- Implemented **autonomous frontier exploration** to handle scenarios where the goal is not initially visible:
+  - Vehicle scans its LIDAR radius for unexplored, non-barrier nodes (the "frontier")
+  - If a frontier is found, it plans a path to the nearest one and continues expanding outward
+  - If no frontier is visible, it **backtracks** to a previously visited node with unexplored neighbors
 
+- Added a **persistent `explored_set`** to simulate memory:
+  - Tracks all visible nodes over time
+  - Prevents revisiting fully explored areas
+  - Enables consistent exploration behavior across multiple replans
 
+- Logic updates to `main.py`:
+  - On spacebar press, the car starts autonomous exploration
+  - Dynamically chooses between goal-seeking and frontier exploration
+  - Switches to direct A* to the goal once it enters LIDAR view
 
+- Visualization enhancements:
+  - **Explored areas** rendered in light blue (`(180, 220, 255)`)
+  - **Frontier nodes** highlighted in purple, overlaid on the map
+  - LIDAR radius visualization now persists frame-to-frame
 
+### Observed Behavior
+- Vehicle successfully reaches the goal even when it starts fully hidden
+- Gracefully handles walls, dead ends, and complex mazes via backtracking
+- Fully autonomous navigation: just set start + goal, press space, and observe
 
+### Fixes / Cleanup
+- Fixed `Node` comparison bug (added `__lt__` to prevent `heapq` errors)
+- Removed redundant methods and dead logic from `main.py`
+- Refactored A* call sites for clarity and reliability
 
+---
 
+### ✅ Project Now Supports:
+- LIDAR-style limited perception
+- Persistent world memory
+- Dynamic frontier-based goal discovery
+- Robust autonomous replanning behavior
 
+### 🔜 Step 6 Preview:
+- HUD overlay: show stats like steps taken, path length, planning time
+- Optional heatmap / cost-to-go visualization
+- Code modularization: split into `perception.py`, `planning.py`, `ui.py`, etc.
+- Potential extras:
+  - Diagonal/cost-weighted movement
+  - PRM/RRT experimental planners
+  - Smooth motion planning (curve-style turns)
 
