@@ -138,12 +138,55 @@ Stopped before goal.
 - **Dynamic replanning** using A* on each move
 - **LIDAR perception preserved** frame-to-frame
 
-### 🔜 Step 6 Preview:
-- HUD overlay: show stats like steps taken, path length, planning time
-- Optional heatmap / cost-to-go visualization
-- Code modularization: split into `perception.py`, `planning.py`, `ui.py`, etc.
-- Potential extras:
-  - Diagonal/cost-weighted movement
-  - PRM/RRT experimental planners
-  - Smooth motion planning (curve-style turns)
+ --- 
+
+## Step 6 – Final UI Polish, Professional HUD, & Dynamic Replanning
+
+- Implemented a **professional user interface** to highlight project polish and real-world AV/robotics best practices:
+  - Added a bold, centered project title: *"AUTONOMOUS PATH PLANNING SIMULATOR"* at the top of the window
+  - Designed a HUD (Heads-Up Display) for live statistics:
+    - **Steps** (cumulative moves)
+    - **Elapsed time** (accurate timer, starts on movement, freezes on success)
+    - UI font upgraded to 'Segoe UI' for a modern, industry-standard look
+  - Help/instructions text displaying **all controls** (“Left Click: Place”, “Right Click: Remove”, “SPACE: Start”, “R: Reset”) anchored at the bottom, styled to avoid too much grid overlap
+  - Carefully positioned all UI elements to **avoid obstructing the simulation grid as much as possible**
+
+- **Obstacle and goal placement** improvements for demonstration and validation:
+  - Tested multiple map layouts with different obstacle and goal placements to ensure:
+    - Path complexity and varied exploration routes
+    - Clear demonstration of LIDAR-based exploration and frontier logic
+    - Robust dynamic replanning in realistic scenarios (including mid-run obstacle placement)
+  - Confirmed agent behavior in “maze-like” and open environments, as well as with scattered “building” blocks to simulate real-world clutter
+
+- **Final project capabilities**:
+  - **Fully interactive simulation**: obstacles can be added or removed *during* vehicle movement
+  - **Live dynamic replanning**: vehicle instantly adapts to new barriers without reset
+  - **Persistent environment memory** and LIDAR-style perception remain core features
+
+### Observed Behavior & Showcase Results
+- Vehicle autonomously explores, backtracks, and reaches hidden goals across various map setups
+- **Dynamic replanning**: when new obstacles appear mid-run, the agent immediately finds an alternative route
+- User interface is visually clean, non-intrusive, and matches professional standards
+
+### Final Testing & Validation
+- Performed extensive testing with different obstacle patterns, start/goal positions, and real-time interactions
+- Validated correct agent behavior in:
+    - Dense mazes, open grids, and “urban” scenarios with scattered obstacles
+    - Dynamic obstacle placement/removal during active exploration
+    - Edge cases: unreachable goals, fully blocked paths, repeated resets
+- Confirmed that UI remains readable and performance is smooth even in complex environments
+
+### Problems, Fixes, and Final Polish
+- Refined HUD alpha/transparency for optimal readability on light backgrounds
+- Tweaked font sizes, spacing, and layout for clarity and aesthetics
+- Fixed timer behavior: now only starts when exploration begins and freezes on goal reach or reset
+- Validated demo flow: project runs smoothly with or without dynamic user intervention
+
+### Final Feature List
+- **AV-style HUD** with real-time steps and timing
+- **Professional, modern UI** with non-obstructive controls and title
+- **Persistent LIDAR exploration, frontier logic, and backtracking**
+- **Dynamic, live obstacle placement and replanning** (demonstrates real-world autonomy)
+- **Thoroughly tested** in diverse and challenging scenarios
+
 
