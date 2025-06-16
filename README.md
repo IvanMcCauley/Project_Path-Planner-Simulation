@@ -10,7 +10,7 @@
 *Above: Live exploration, dynamic replanning, and HUD in action.*
 
 ---
-
+ 
 ## Table of Contents
 
 - [Features](#features)
