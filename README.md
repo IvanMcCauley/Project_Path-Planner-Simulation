@@ -48,7 +48,7 @@
 ###  **Screenshots**
 | Initial Setup        | Dynamic Replanning        | Successful Goal Reach |
 |----------------------|--------------------------|----------------------|
-| ![Initial](docs/setup.png) | ![Replanning](docs/replan.png) | ![Goal](docs/goal.png) |
+| ![Initial](setup.png) | ![Replanning](replan.png) | ![Goal](goal.png) |
 
 > *Add your own demo GIF, video, and screenshots in the `docs/` folder for maximum impact!*
 
