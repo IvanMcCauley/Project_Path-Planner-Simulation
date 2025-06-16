@@ -13,7 +13,7 @@
  
 ## Table of Contents
 
-- [Features](#features)
+[Features](#features)
 - [Demo Videos & Screenshots](#demo-videos--screenshots)
 - [How It Works](#how-it-works)
 - [Quickstart](#quickstart)
