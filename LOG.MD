@@ -29,16 +29,6 @@
   - Resolved by simplifying click logic and ensuring all state changes register per frame
 
 
-### 🔜 Next Steps (Step 3 Preview)
-
-- Implement A* pathfinding algorithm from scratch (no libraries)
-- Press spacebar to trigger the path search from start to goal
-- Visualize the algorithm in real time:
-  - Blue = frontier (open set)
-  - Red = visited (closed set)
-  - Purple or yellow = final path
-- Ensure performance is smooth and visuals update frame-by-frame
-
 ---
 
 ## Step 3 – A* Pathfinding Algorithm (Visualized)
@@ -110,7 +100,7 @@ Stopped before goal.
 
 - Visualization enhancements:
   - **Explored areas** rendered in light blue (`(180, 220, 255)`)
-  - Added vehicle and flag icons to represent an automous vehicle and the end goal
+  - Added vehicle and flag icons to represent an autonomous vehicle and the end goal
   - LIDAR radius visualization now persists frame-to-frame
 
 
