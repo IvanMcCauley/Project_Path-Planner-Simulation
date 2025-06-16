@@ -134,12 +134,12 @@ path_planner_sim/
 
 ## 📝 Development Log
 
-See [`log.md`](log.md) for the step-by-step build and debugging diary, including technical challenges, problem-solving, and final polish.
+See [`LOG.md`](LOG.md) for the step-by-step build and debugging diary, including technical challenges, problem-solving, and final polish.
 
 ---
 
 ## 💡 Further Ideas
-- Add alternative planners (Dijkstra, RRT, PRM)
+- Add alternative planners (Dijkstra, RRT)
 - Cost-to-go heatmap visualization
 - Diagonal or curved movement options
 - Exportable path data/logs
