@@ -1,6 +1,10 @@
 # 🚗 Autonomous Vehicle Path Planning Simulator  
 *A\* with LIDAR-style visibility & real-time dynamic replanning*
 
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Built with Pygame](https://img.shields.io/badge/Built%20with-Pygame-orange?logo=pygame)
+
 > **An interactive simulation of real-world autonomous vehicle (AV) path planning and dynamic obstacle avoidance, built with Python & Pygame.**  
 >
 > This project simulates key AV logic, including LIDAR-style perception, A\* pathfinding with frontier exploration, and real-time dynamic replanning - all visualized step-by-step in an educational interface.
@@ -19,6 +23,7 @@
 - [Features](#features)
 - [Demo Videos & Screenshots](#demo-videos--screenshots)
 - [Why This Matters](#why-this-matters)
+- [Applications](#applications)
 - [How It Works](#how-it-works)
 - [Quickstart](#quickstart)
 - [Project Structure](#project-structure)
@@ -28,6 +33,7 @@
 - [Further Ideas](#further-ideas)
 - [Limitations](#️-limitations)
 - [License](#license)
+- [Acknowledgements](#acknowledgements)
 
 ---
 
@@ -135,6 +141,12 @@ path_planner_sim/
 └── flag.png          # Goal/flag icon
 ```
 
+## 📂 Source Code
+
+- [`main.py`](https://github.com/IvanMcCauley/Project_Path-Planner-Simulation/blob/main/main.py): Main UI and simulation loop  
+- [`astar.py`](https://github.com/IvanMcCauley/Project_Path-Planner-Simulation/blob/main/astar.py): Core A* planning logic  
+- [`car.png`](https://github.com/IvanMcCauley/Project_Path-Planner-Simulation/blob/main/car.png), [`flag.png`](https://github.com/IvanMcCauley/Project_Path-Planner-Simulation/blob/main/flag.png): Icons for visualization
+
 ## 🕹️ How to Use
 
 **Controls:**
@@ -170,7 +182,7 @@ path_planner_sim/
 
 ## 📝 Development Log
 
-See [`LOG.md`](dev_log.md) for the step-by-step build and debugging diary, including technical challenges, problem-solving, and final polish.
+See [`dev_log.md`](dev_log.md) for the step-by-step build and debugging diary, including technical challenges, problem-solving, and final polish.
 
 ---
 
