@@ -219,7 +219,7 @@ Inspired by real-world AV challenges and algorithmic planning theory.
 Built independently as part of my robotics portfolio.  
 Open to contributions, forks, and collaboration!
 
---
+---
 
 **Created by Ivan McCauley**  
 [LinkedIn](https://www.linkedin.com/in/ivan-mccauley-82b17a177) | [GitHub](https://github.com/IvanMcCauley)
