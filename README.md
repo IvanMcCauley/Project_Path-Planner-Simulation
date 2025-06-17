@@ -45,7 +45,8 @@
 ## 📽️ Demo Videos & Screenshots
 
 ###  **Demo Video**
-- [![Watch the demo video](docs/demo_thumbnail.png)](docs/final_demo.mp4)
+[![Watch the demo video](https://github.com/IvanMcCauley/Project_Path-Planner-Simulation/raw/main/path_planner_thumbnail.png)](https://drive.google.com/file/d/1eHsxObNF8PpTROnrFX22IuVbGq-1tNkz/view?usp=sharing)
+
 - *Shows LIDAR exploration, dynamic replanning, and UI in a real scenario.*
 
 ###  **Screenshots**
