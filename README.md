@@ -1,9 +1,9 @@
 # 🚗 Autonomous Vehicle Path Planning Simulator  
 *A\* with LIDAR-style visibility & real-time dynamic replanning*
 
+![Built with Pygame](https://img.shields.io/badge/Built%20with-Pygame-orange?logo=pygame)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![Built with Pygame](https://img.shields.io/badge/Built%20with-Pygame-orange?logo=pygame)
 
 > **An interactive simulation of real-world autonomous vehicle (AV) path planning and dynamic obstacle avoidance, built with Python & Pygame.**  
 >
@@ -31,7 +31,7 @@
 - [Technical Details](#technical-details)
 - [Development Log](#development-log)
 - [Further Ideas](#further-ideas)
-- [Limitations](#️-limitations)
+- [Limitations](#️limitations)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
@@ -41,7 +41,7 @@
 
 - **Real-time, grid-based path planning** using A* (with future expansion for Dijkstra, RRT, PRM, etc.)
 - **LIDAR-style limited perception:** Vehicle “sees” and plans only within a configurable sensor radius
-- **Fully autonomous frontier exploration:** The vehicle intelligently explores and discovers goals outside its initial perception, backtrack, and recover from dead ends
+- **Fully autonomous frontier exploration:** The vehicle autonomously explores beyond its sensor range, discovers hidden goals, and recovers from dead ends.
 - **Dynamic replanning:** Obstacles can be added/removed at any time - vehicle replans in real time
 - **Interactive UI:** Place start, goal, and obstacles with mouse; reset and control with keyboard
 - **Professional HUD:** Steps, elapsed time, and all controls always visible, non-intrusive
@@ -58,14 +58,11 @@
 </a>
 
 
-- *Shows LIDAR exploration, dynamic replanning, and UI in a real scenario.*
-
 ###  **Screenshots**
 | Initial Setup        | Dynamic Replanning        | Successful Goal Reach |
 |----------------------|--------------------------|----------------------|
 | ![Initial](setup.png) | ![Replanning](replan.png) | ![Goal](goal.png) |
 
-> *Add your own demo GIF, video, and screenshots in the `docs/` folder for maximum impact!*
 
 ---
 
@@ -215,7 +212,7 @@ This project is licensed under the MIT License.
 See [`LICENSE`](LICENSE) for details.
 
 ---
----
+
 ## 🙏 Acknowledgements
 
 Inspired by real-world AV challenges and algorithmic planning theory.  
