@@ -1,13 +1,13 @@
-# AUTONOMOUS PATH PLANNING SIMULATOR
+# 🚗 Autonomous Vehicle Path Planning Simulator  
+*A\* with LIDAR-style visibility & real-time dynamic replanning*
 
-> **A professional, interactive simulation of real-world autonomous vehicle path planning and dynamic obstacle avoidance in Python/Pygame.**
+> **An interactive simulation of real-world autonomous vehicle (AV) path planning and dynamic obstacle avoidance, built with Python & Pygame.**  
 >
-> This project demonstrates high-level AV logic, LIDAR-style perception, A* exploration, and dynamic real-time replanning - fully visualized, step-by-step, in an elegant and educational UI.
+> This project simulates key AV logic, including LIDAR-style perception, A\* pathfinding with frontier exploration, and real-time dynamic replanning - all visualized step-by-step in an educational interface.
+> **Built as part of a robotics portfolio to showcase algorithmic thinking, autonomy, and real-time decision-making.**
 
 ---
-
-[![Watch the demo video](https://github.com/IvanMcCauley/Project_Path-Planner-Simulation/raw/main/path_planner_thumbnail.png)](https://drive.google.com/file/d/1eHsxObNF8PpTROnrFX22IuVbGq-1tNkz/view?usp=sharing)
-
+![Demo GIF](https://github.com/IvanMcCauley/Project_Path-Planner-Simulation/raw/main/17501890103767581-ezgif.com-optimize.gif)
 
 
 *Above: Live exploration, dynamic replanning, and HUD in action.*
@@ -18,6 +18,7 @@
 
 - [Features](#features)
 - [Demo Videos & Screenshots](#demo-videos--screenshots)
+- [Why This Matters](#why-this-matters)
 - [How It Works](#how-it-works)
 - [Quickstart](#quickstart)
 - [Project Structure](#project-structure)
@@ -25,6 +26,7 @@
 - [Technical Details](#technical-details)
 - [Development Log](#development-log)
 - [Further Ideas](#further-ideas)
+- [Limitations](#️-limitations)
 - [License](#license)
 
 ---
@@ -33,7 +35,7 @@
 
 - **Real-time, grid-based path planning** using A* (with future expansion for Dijkstra, RRT, PRM, etc.)
 - **LIDAR-style limited perception:** Vehicle “sees” and plans only within a configurable sensor radius
-- **Fully autonomous frontier exploration:** Agent can discover goals not initially in view, backtrack, and recover from dead ends
+- **Fully autonomous frontier exploration:** The vehicle intelligently explores and discovers goals outside its initial perception, backtrack, and recover from dead ends
 - **Dynamic replanning:** Obstacles can be added/removed at any time - vehicle replans in real time
 - **Interactive UI:** Place start, goal, and obstacles with mouse; reset and control with keyboard
 - **Professional HUD:** Steps, elapsed time, and all controls always visible, non-intrusive
@@ -45,7 +47,10 @@
 ## 📽️ Demo Videos & Screenshots
 
 ###  **Demo Video**
-[![Watch the demo video](https://github.com/IvanMcCauley/Project_Path-Planner-Simulation/raw/main/path_planner_thumbnail.png)](https://drive.google.com/file/d/1eHsxObNF8PpTROnrFX22IuVbGq-1tNkz/view?usp=sharing)
+<a href="https://drive.google.com/file/d/1eHsxObNF8PpTROnrFX22IuVbGq-1tNkz/view?usp=sharing" target="_blank">
+  <img src="https://github.com/IvanMcCauley/Project_Path-Planner-Simulation/raw/main/path_planner_thumbnail.png" width="300"/>
+</a>
+
 
 - *Shows LIDAR exploration, dynamic replanning, and UI in a real scenario.*
 
@@ -55,6 +60,33 @@
 | ![Initial](setup.png) | ![Replanning](replan.png) | ![Goal](goal.png) |
 
 > *Add your own demo GIF, video, and screenshots in the `docs/` folder for maximum impact!*
+
+---
+
+## 🌍 Why This Matters
+
+Path planning is a core pillar of autonomous vehicle systems.  
+This project demonstrates how AVs make real-time decisions based on limited sensor input, dynamically adapt to obstacles, and efficiently reach their destinations - all without human intervention.
+
+By simulating frontier-based exploration and A* planning under sensor constraints, this project mirrors real-world AV challenges like:
+
+- Navigating unknown or partially observable environments
+- Replanning around dynamic obstacles (e.g. cars, pedestrians)
+- Making fast decisions under time and compute constraints
+
+It also highlights critical AV system design skills:
+- **Algorithm design**
+- **Perception integration**
+- **Decision logic**
+- **Real-time visualization and debugging tools**
+---
+
+## 🧠 Applications
+This simulation captures the core logic used in:
+- Self-driving vehicle navigation (urban & off-road)
+- Robotics pathfinding in unknown environments
+- Search & rescue robot planning
+- Teaching core concepts of AI, perception, and control
 
 ---
 
@@ -78,8 +110,8 @@
 
 ### 1. **Clone the repo**
 ```
-git clone https://github.com/YOUR_USERNAME/path_planner_sim.git
-cd path_planner_sim
+git clone https://github.com/IvanMcCauley/Project_Path-Planner-Simulation.git
+cd Project_Path-Planner-Simulation
 ```
 
 ### 2. **Install dependencies**
@@ -138,7 +170,7 @@ path_planner_sim/
 
 ## 📝 Development Log
 
-See [`LOG.md`](LOG.md) for the step-by-step build and debugging diary, including technical challenges, problem-solving, and final polish.
+See [`LOG.md`](dev_log.md) for the step-by-step build and debugging diary, including technical challenges, problem-solving, and final polish.
 
 ---
 
@@ -151,12 +183,34 @@ See [`LOG.md`](LOG.md) for the step-by-step build and debugging diary, including
 
 ---
 
+## ⚠️ Limitations
+
+While this simulator demonstrates key AV path planning logic, some simplifications were made:
+
+- **Grid-based world:** Real vehicles operate in continuous, noisy environments - not discrete cells.
+- **Perfect localization:** The agent always knows its position exactly (no drift or noise modeled).
+- **Simplified LIDAR model:** Sensor visibility is range-based and omnidirectional - no real beam physics.
+- **No moving obstacles:** Dynamic agents (e.g. pedestrians, cars) aren’t yet simulated.
+- **A\* only:** The current planner doesn’t support non-holonomic constraints, curves, or time-based trajectories.
+
+These choices were intentional to focus on core decision logic - future versions could integrate SLAM, real-world sensor input, or more advanced planners (e.g. RRT*, MPC).
+
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License.  
 See [`LICENSE`](LICENSE) for details.
 
 ---
+---
+## 🙏 Acknowledgements
+
+Inspired by real-world AV challenges and algorithmic planning theory.  
+Built independently as part of my robotics portfolio.  
+Open to contributions, forks, and collaboration!
+
+--
 
 **Created by Ivan McCauley**  
 [LinkedIn](https://www.linkedin.com/in/ivan-mccauley-82b17a177) | [GitHub](https://github.com/IvanMcCauley)
