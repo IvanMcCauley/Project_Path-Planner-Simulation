@@ -9,6 +9,7 @@
 [![Watch the demo video](https://github.com/IvanMcCauley/Project_Path-Planner-Simulation/raw/main/path_planner_thumbnail.png)](https://drive.google.com/file/d/1eHsxObNF8PpTROnrFX22IuVbGq-1tNkz/view?usp=sharing)
 
 
+
 *Above: Live exploration, dynamic replanning, and HUD in action.*
 
 ---
