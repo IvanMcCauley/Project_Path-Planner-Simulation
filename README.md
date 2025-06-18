@@ -138,7 +138,7 @@ path_planner_sim/
 └── flag.png          # Goal/flag icon
 ```
 
-## 📂 Source Code
+## 📂 Project Code
 
 - [`main.py`](https://github.com/IvanMcCauley/Project_Path-Planner-Simulation/blob/main/main.py): Main UI and simulation loop  
 - [`astar.py`](https://github.com/IvanMcCauley/Project_Path-Planner-Simulation/blob/main/astar.py): Core A* planning logic  
